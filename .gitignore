@@ -6,6 +6,7 @@ env/
 
 # Distributable
 floor-browse
+release/
 
 # Bytecode
 __pycache__/
