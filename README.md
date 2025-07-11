@@ -25,7 +25,7 @@ Built by FloorTech and powered by a re-imagined version of the web.
 - [Tkinter](https://tkdocs.com/tutorial/install.html) for UI (usually comes pre-installed)
 - [Nuitka](https://nuitka.net/) if compiling to binary
 - [Lupa](https://pypi.org/project/lupa/) for Lua support
-- `bs4` for *TKML* support
+- `bs4` for _TKML_ support
 - `requests` for page visiting support
 
 ### 🔃 Installation
@@ -70,10 +70,12 @@ Read the [TKML Documentation](#-tkml-documentation-tkinter-markup-language) belo
 
 ## 🔧 Built-in Lua Standard Library
 
-| Function         | Description                                    |
-|------------------|------------------------------------------------|
-| `std.print(str)` | Logs text to console with timestamp            |
-| `std.get(id)`    | Finds and returns a node by its `id` attribute |
+| Function                            | Description                                                                  |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| `std.print(str)`                    | Logs text to console with timestamp                                          |
+| `std.get(id)`                       | Finds and returns a node by its `id` attribute                               |
+| `std.set_attr(std.get, key, value)` | Sets the attribute of an element and re-renders (e.g. foreground, font-size) |
+| `std.set_prop(std.get, key, value)` | Sets the property of an element and re-renders (e.g. text, children)         |
 
 ---
 
@@ -104,7 +106,7 @@ This browser rethinks the web, stripping out excess and focusing on performance,
 
 ---
 
-## 📘 TKML Documentation ***(Tkinter Markup Language)***
+## 📘 TKML Documentation **_(Tkinter Markup Language)_**
 
 **TKML** is a lightweight HTML-like markup language designed for use in the Floor Browse engine. It supports styled UI components and embedded Lua scripting to bring dynamic interactivity to your pages.
 
@@ -114,15 +116,18 @@ This browser rethinks the web, stripping out excess and focusing on performance,
 
 ```html
 <label>
-    <label id="hello" font-size="2" font-style="bold" foreground="red">HELO SIGMA</label>
-    <label>I. Am. Floor. Mann.</label>
-    <label>I created this site, the browser, AND the WWW redo.</label>
-    <label>I. Am. Sigma.</label>
+  <label id="hello" font-size="2" font-style="bold" foreground="red"
+    >HELO SIGMA</label
+  >
+  <label>I. Am. Floor. Mann.</label>
+  <label>I created this site, the browser, AND the WWW redo.</label>
+  <label>I. Am. Sigma.</label>
 
-    <script lang="lua">
-        local helloLabel = std.get("hello")
-        std.print(helloLabel.text)
-    </script>
+  <script lang="lua">
+    local helloLabel = std.get("hello")
+    std.print(helloLabel.text)
+  </script>
+  <script url="example.com/index.lua" lang="lua"></script>
 </label>
 ```
 
@@ -146,12 +151,7 @@ This system is equivalent to using **`rem` units**, and provides consistent scal
 TKML uses [Lua](https://lua.org) to define **page-specific interactivity**.
 
 - All `<script lang="lua">` blocks are executed after the markup is parsed.
-- Lua has access to a built-in **standard library**, including:
-
-| Function        | Description                                      |
-|----------------|--------------------------------------------------|
-| `std.print(text)` | Prints to the developer log console             |
-| `std.get(id)`     | Retrieves an element node by its `id` attribute |
+- Lua has access to a built-in **standard library**, which is shown [here](#-built-in-lua-standard-library).
 
 Example:
 
@@ -180,11 +180,11 @@ This design is intentional:
 
 ```html
 <label>
-    <label id="msg" font-style="italic" foreground="blue">Hello, TKML!</label>
-    <script lang="lua">
-        local el = std.get("msg")
-        std.print("User message: " .. el.text)
-    </script>
+  <label id="msg" font-style="italic" foreground="blue">Hello, TKML!</label>
+  <script lang="lua">
+    local el = std.get("msg")
+    std.print("User message: " .. el.text)
+  </script>
 </label>
 ```
 

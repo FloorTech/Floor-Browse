@@ -1,0 +1,52 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Distributable
+floor-browse
+
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Nuitka build output
+*.build
+*.dist
+*.onefile-build
+*.onefile-cache
+*.nuitka-cache
+*.part
+*.o
+*.bin
+*.exe
+*.dll
+*.so
+*.pyd
+
+# Nuitka build artifacts
+*.manifest
+*.exp
+*.lib
+*.ilk
+*.map
+*.mod
+*.obj
+*.pdb
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+
+# Mac/Linux extras
+.DS_Store
+*.swp
+
+# Windows
+Thumbs.db
+
+# Example development files
+example/
