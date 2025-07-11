@@ -4,6 +4,106 @@
 
 Built by FloorTech and powered by a re-imagined version of the web.
 
+---
+
+## 📦 Features
+
+- ⚡ **Fast Python runtime** using [Nuitka](https://nuitka.net/) for native binary compilation
+- 🧩 **Custom Markup Language (`.tkml`)** with HTML-like syntax
+- 🔧 **Dynamic Lua scripting** for real-time page interactivity
+- 🪟 **Simple, embeddable GUI** using `tkinter`
+- 🎨 **Lightweight styling** via tag attributes like `font-size`, `font-style`, and `foreground`
+- 🧠 **Built-in standard library for Lua** to manipulate parsed DOM-like structure and more
+
+---
+
+## 🛠️ Getting Started
+
+### 🔧 Prerequisites
+
+- Python 3.12+
+- [Tkinter](https://tkdocs.com/tutorial/install.html) for UI (usually comes pre-installed)
+- [Nuitka](https://nuitka.net/) if compiling to binary
+- [Lupa](https://pypi.org/project/lupa/) for Lua support
+- `bs4` for *TKML* support
+- `requests` for page visiting support
+
+### 🔃 Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/FloorTech/Floor-Browse.git
+cd Floor-Browse
+python3 -m venv venv
+source venv/bin/activate  # Or .\venv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Running the Browser
+
+Run in development mode:
+
+```bash
+chmod +x ./dev.sh
+./dev.sh
+```
+
+Or compile to a standalone binary using Nuitka:
+
+```bash
+chmod +x ./build.sh
+./build.sh
+```
+
+---
+
+## ✨ Writing `.tkml` Files
+
+Configure your server to serve `.tkml` files using the `text/tkml` MIME type.
+
+Read the [TKML Documentation](#-tkml-documentation-tkinter-markup-language) below.
+
+---
+
+## 🔧 Built-in Lua Standard Library
+
+| Function         | Description                                    |
+|------------------|------------------------------------------------|
+| `std.print(str)` | Logs text to console with timestamp            |
+| `std.get(id)`    | Finds and returns a node by its `id` attribute |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── client/              # Network / page visiting logic (including AST parser)
+├── runtime/             # Lua runtime and bindings (including standard library)
+├── ui.py                # UI setup and rendering
+├── main.py              # Entry point
+```
+
+---
+
+## 🧠 Philosophy
+
+> "I created the site, the browser, AND the WWW redo. I. Am. Sigma."  
+> — Floor Mann
+
+This browser rethinks the web, stripping out excess and focusing on performance, simplicity, and power through Python and Lua.
+
+---
+
+## 🔐 License
+
+[MIT License © FloorTech](LICENSE)
+
+---
+
 ## 📘 TKML Documentation ***(Tkinter Markup Language)***
 
 **TKML** is a lightweight HTML-like markup language designed for use in the Floor Browse engine. It supports styled UI components and embedded Lua scripting to bring dynamic interactivity to your pages.
