@@ -6,6 +6,27 @@ Built by FloorTech and powered by a re-imagined version of the web.
 
 ---
 
+### 🔃 User-Friendly Installation
+
+**Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/FloorTech/Floor-Browse/main/installer/linux.sh | bash
+```
+
+**MacOS:**
+```diff
+- Official builds for MacOS are not available yet
++ You can build from the source
+```
+
+**Windows:**
+```diff
+- Official builds for Windows are not available yet
++ You can build from the source
+```
+
+---
+
 ## 📦 Features
 
 - ⚡ **Fast Python runtime** using [Nuitka](https://nuitka.net/) for native binary compilation
